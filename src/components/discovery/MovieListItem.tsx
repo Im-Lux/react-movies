@@ -27,7 +27,11 @@ const MovieListItem: FC<MovieListItemProps> = ({ movie, category }) => {
     <>
       <div
         className="movie-item mt-3 mb-3"
-        style={{ backgroundImage: `url(${posterImage})` }}
+        style={{
+          backgroundImage: `url(${
+            posterImage || require(`../../assets/images/not-found.png`)
+          })`,
+        }}
       >
         <span className="inner-favorites" onClick={() => console.log("first")}>
           Favs <BsSuitHeart size="2rem" />

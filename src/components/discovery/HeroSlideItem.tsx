@@ -31,7 +31,10 @@ const HeroSlideItem: FC<HeroSlideItemMovieProps> = ({ movie, className }) => {
     >
       <div className="hero-slide__item__content">
         <div className="hero-slide__item__content__poster">
-          <img src={posterImage} alt={movie.title} />
+          <img
+            src={posterImage || require(`../../assets/images/not-found.png`)}
+            alt={movie.title}
+          />
         </div>
         <div className="hero-slide__item__content__info">
           <h1 className="title">{movie.title}</h1>

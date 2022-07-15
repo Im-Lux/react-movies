@@ -11,6 +11,7 @@
   transition: all 0.35s ease;
 
   border-radius: 1.5rem;
+  cursor: pointer;
 
   &::before {
     content: "";
@@ -23,31 +24,26 @@
     transition: background-color 0.35s ease-in-out;
   }
 
-  .inner-favorites,
-  .inner-action {
+  &__title {
     position: absolute;
-    right: 50%;
-    transform: translate(50%);
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
     opacity: 0;
-    transition: all 0.35s ease;
-  }
-  .inner-favorites {
-    top: 30px;
-  }
-  .inner-action {
-    bottom: 75px;
+    transition: opacity 0.5s ease;
   }
 
   &:hover {
     transform: translateY(-1rem);
   }
 
-  &:hover::before {
-    background-color: rgba($color: $color-black, $alpha: 0.9);
+  &:hover &__title {
+    opacity: 1;
   }
 
-  &:hover .inner-favorites,
-  &:hover .inner-action {
-    opacity: 1;
+  &:hover::before {
+    background-color: rgba($color: $color-black, $alpha: 0.9);
   }
 }

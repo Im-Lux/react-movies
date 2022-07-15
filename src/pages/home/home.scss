@@ -81,16 +81,18 @@
         margin-top: 10rem;
         display: flex;
         justify-content: center;
-
-        img {
-          width: 100%;
-        }
       }
     }
 
     @include mobile {
       &__info {
         min-width: 100%;
+      }
+
+      &__image {
+        img {
+          min-width: 40rem;
+        }
       }
     }
   }

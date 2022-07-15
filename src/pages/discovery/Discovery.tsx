@@ -1,11 +1,17 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import HeroSlide from "../../components/discovery/HeroSlide";
 import MovieListContainer from "../../components/discovery/MovieListContainer";
 import InfoModal from "../../components/modal/InfoModal";
+import {
+  ModalInfoContextProvider,
+  useModalInfo,
+} from "../../context/modal-info-context";
 import { Category, MovieType, TvType } from "../../models/Enums";
 
 const Discovery: FC = () => {
+  const { isShown } = useModalInfo();
+
   return (
     <>
       <HeroSlide />
@@ -36,7 +42,7 @@ const Discovery: FC = () => {
         />
       </Container>
 
-      {/* <InfoModal /> */}
+      {isShown && <InfoModal />}
     </>
   );
 };

@@ -16,6 +16,11 @@ import ActorsList from "../../components/details/ActorsList";
 import PostersList from "../../components/details/PostersList";
 import MovieListContainer from "../../components/discovery/MovieListContainer";
 import VideoModal from "../../components/modal/VideoModal";
+import {
+  ModalInfoContextProvider,
+  useModalInfo,
+} from "../../context/modal-info-context";
+import InfoModal from "../../components/modal/InfoModal";
 
 type Genre = {
   id: number;
@@ -40,6 +45,7 @@ type Item = {
 
 const Details: FC = () => {
   const { category, id } = useParams();
+  const { isShown } = useModalInfo();
   const similar = category === "tv" ? TvType.Similar : MovieType.Similar;
   const [item, setItem] = useState<Item>();
   const [showVideo, setShowVideo] = useState<boolean>(false);
@@ -165,6 +171,8 @@ const Details: FC = () => {
           onClose={closeVideoModal}
         />
       )}
+
+      {isShown && <InfoModal />}
     </>
   );
 };

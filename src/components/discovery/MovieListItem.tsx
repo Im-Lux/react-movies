@@ -7,6 +7,7 @@ import { Button } from "react-bootstrap";
 import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 import { Category } from "../../models/Enums";
 import InfoModal from "../modal/InfoModal";
+import { useModalInfo } from "../../context/modal-info-context";
 
 type MovieListItemProps = {
   movie: Movie;
@@ -14,14 +15,21 @@ type MovieListItemProps = {
 };
 
 const MovieListItem: FC<MovieListItemProps> = ({ movie, category }) => {
-  const navigation = useNavigate();
+  const { showModal } = useModalInfo();
 
   const posterImage = apiConfig.posterImage(
     movie.poster_path || movie.backdrop_path
   );
 
-  const goToDetailsHandler = () => {
-    navigation(`/discovery/${category}/${movie.id}`);
+  const showModalHandler = () => {
+    showModal({
+      id: movie.id.toString(),
+      category: category,
+      title: movie.title || movie.name,
+      overview: movie.overview,
+      poster_path: movie.poster_path,
+      backdrop_path: movie.backdrop_path,
+    });
   };
 
   return (
@@ -33,20 +41,12 @@ const MovieListItem: FC<MovieListItemProps> = ({ movie, category }) => {
             posterImage || require(`../../assets/images/not-found.png`)
           })`,
         }}
+        onClick={showModalHandler}
       >
-        <span className="inner-favorites" onClick={() => console.log("first")}>
-          Favs <BsSuitHeart size="2rem" />
-        </span>
-
-        <Button
-          className="inner-action fw-bold px-4"
-          variant="warning"
-          onClick={goToDetailsHandler}
-        >
-          See More
-        </Button>
+        <h3 className="movie-item__title fs-5 mt-2 text-left">
+          {movie.title || movie.name}
+        </h3>
       </div>
-      <h3 className="fs-5 mt-2 text-left">{movie.title || movie.name}</h3>
     </>
   );
 };

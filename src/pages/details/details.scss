@@ -109,10 +109,6 @@
           margin-right: 0.5rem;
         }
 
-        span {
-          cursor: pointer;
-        }
-
         @include mobile {
           flex-wrap: wrap;
           justify-content: flex-start;

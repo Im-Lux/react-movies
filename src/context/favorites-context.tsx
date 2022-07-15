@@ -1,4 +1,14 @@
-import { FC, createContext, useContext, ReactNode, useState } from "react";
+import {
+  FC,
+  createContext,
+  useContext,
+  ReactNode,
+  useState,
+  useEffect,
+  useLayoutEffect,
+} from "react";
+import { useLocalStorage } from "../hooks/use-local-storage";
+import { Category } from "../models/Enums";
 
 type Props = {
   children: ReactNode;
@@ -6,6 +16,7 @@ type Props = {
 
 type Favs = {
   id: string;
+  category: Category;
   backdrop_path: string;
   title: string;
 };
@@ -27,10 +38,8 @@ export const useFavorites = () => {
 };
 
 export const FavoritesContextProvider: FC<Props> = ({ children }) => {
-  const [favorites, setFavorites] = useState<Favs[]>([]);
+  const [favorites, setFavorites] = useLocalStorage<Favs[]>("favorites", []);
   const [isModalShown, setIsModalShown] = useState<boolean>(false);
-
-  console.log(favorites);
 
   const showFavorites = () => {
     setIsModalShown(true);

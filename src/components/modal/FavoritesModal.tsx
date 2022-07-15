@@ -9,9 +9,11 @@ import { AiOutlineClose } from "react-icons/ai";
 import { BsHeartFill, BsSuitHeartFill } from "react-icons/bs";
 import { useFavorites } from "../../context/favorites-context";
 import apiConfig from "../../api/apiConfig";
+import { useNavigate } from "react-router-dom";
 
 const FavoritesModal: FC = () => {
   const { favorites, closeFavorites, removeItemFromFavorites } = useFavorites();
+  const navigation = useNavigate();
 
   return (
     <div className="favorites">
@@ -44,6 +46,15 @@ const FavoritesModal: FC = () => {
               </div>
 
               <div className="favorites__item__action">
+                <Button
+                  variant="info"
+                  onClick={() => {
+                    navigation(`/discovery/${fav.category}/${fav.id}`);
+                    closeFavorites();
+                  }}
+                >
+                  Watch
+                </Button>
                 <Button
                   variant="danger"
                   onClick={() => removeItemFromFavorites(fav.id)}

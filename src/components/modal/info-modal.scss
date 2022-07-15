@@ -70,10 +70,6 @@
         justify-content: flex-start;
         align-items: center;
         gap: 2.5rem;
-
-        svg {
-          margin-right: 0.25rem;
-        }
       }
 
       @include mobile {

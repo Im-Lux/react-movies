@@ -6,6 +6,7 @@ import "./info-modal.scss";
 import { useModalInfo } from "../../context/modal-info-context";
 import apiConfig from "../../api/apiConfig";
 import { useNavigate } from "react-router-dom";
+import FavoritesButton from "../../utils/FavoritesButton";
 
 const InfoModal: FC = () => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -49,10 +50,17 @@ const InfoModal: FC = () => {
             >
               PLAY NOW
             </Button>
-            <span>
-              <BsSuitHeart color="red" size="2rem" />
-              Add to Favorites
-            </span>
+
+            {item && (
+              <FavoritesButton
+                item={{
+                  id: item?.id.toString()!,
+                  backdrop_path: item?.backdrop_path!,
+                  title: item?.title!,
+                  category: item.category,
+                }}
+              />
+            )}
           </div>
         </div>
       </div>

@@ -22,6 +22,7 @@ import {
 } from "../../context/modal-info-context";
 import InfoModal from "../../components/modal/InfoModal";
 import { useFavorites } from "../../context/favorites-context";
+import FavoritesButton from "../../utils/FavoritesButton";
 
 type Genre = {
   id: number;
@@ -49,8 +50,6 @@ const Details: FC = () => {
   const [showVideo, setShowVideo] = useState<boolean>(false);
   const { category, id } = useParams();
   const { isShown } = useModalInfo();
-  const { isItemInFavorites, addItemToFavorites, removeItemFromFavorites } =
-    useFavorites();
   const similar = category === "tv" ? TvType.Similar : MovieType.Similar;
 
   const showVideoModal = () => {
@@ -59,18 +58,6 @@ const Details: FC = () => {
 
   const closeVideoModal = () => {
     setShowVideo(false);
-  };
-
-  const itemToFavoritesHandler = () => {
-    if (isItemInFavorites(item?.id.toString()!)) {
-      removeItemFromFavorites(item?.id.toString()!);
-    } else {
-      addItemToFavorites({
-        id: item?.id.toString()!,
-        title: item?.title! || item?.name!,
-        backdrop_path: item?.backdrop_path!,
-      });
-    }
   };
 
   useEffect(() => {
@@ -156,16 +143,16 @@ const Details: FC = () => {
               <Button className="px-3" variant="dark" onClick={showVideoModal}>
                 TRAILER
               </Button>
-              {!isItemInFavorites(item?.id.toString()!) ? (
-                <span onClick={itemToFavoritesHandler}>
-                  <BsSuitHeart color="red" size="2.5rem" />
-                  Add to Favs
-                </span>
-              ) : (
-                <span onClick={itemToFavoritesHandler}>
-                  <BsSuitHeartFill color="red" size="2.5rem" />
-                  Remove from Favs
-                </span>
+
+              {item && (
+                <FavoritesButton
+                  item={{
+                    id: item?.id.toString()!,
+                    backdrop_path: item?.backdrop_path!,
+                    title: item?.title!,
+                    category: category! as Category,
+                  }}
+                />
               )}
             </div>
           </div>

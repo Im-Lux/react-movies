@@ -1,0 +1,9 @@
+@use "../sass/index" as *;
+
+.favorites-button {
+  cursor: pointer;
+
+  svg {
+    margin-right: 0.35rem;
+  }
+}

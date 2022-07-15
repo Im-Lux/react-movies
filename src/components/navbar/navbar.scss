@@ -16,12 +16,24 @@
     background-color: rgba($color: $color-black, $alpha: 0.7);
   }
 
+  @include tablet {
+    height: 12rem;
+
+    &.shrink {
+      height: 9rem;
+    }
+  }
+
   .navbar {
     width: 90%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+
+    & > * {
+      width: 20%;
+    }
 
     @include tablet {
       .logo {
@@ -35,8 +47,9 @@
 
     &__list {
       margin: 0;
+      padding: 0;
       display: flex;
-      gap: 3rem;
+      justify-content: space-around;
 
       li {
         padding: 5px 0;
@@ -76,6 +89,67 @@
         justify-content: space-around;
 
         background-color: rgba($color: $color-black, $alpha: 0.75);
+      }
+    }
+
+    &__search {
+      input {
+        border-radius: 5px;
+        width: 90%;
+        background: $color-background;
+        border: 0;
+        border-bottom: 1px solid $color-white;
+        padding: 5px 1rem;
+        color: $color-white;
+        box-shadow: 3px 2px 10px rgba($color: $color-white, $alpha: 0.5);
+      }
+    }
+
+    &__favorite {
+      cursor: pointer;
+
+      svg {
+        margin-right: 0.25rem;
+      }
+
+      span {
+        font-size: 1.25rem;
+        font-weight: 500;
+        transition: color 0.5s ease, text-shadow 0.5s ease;
+
+        &:hover {
+          color: red;
+          text-shadow: 2px 2px 7px red;
+        }
+      }
+    }
+
+    @include tablet {
+      justify-content: space-evenly;
+      align-items: center;
+      gap: 2rem;
+
+      .logo {
+        order: 1;
+        width: 45%;
+        img {
+          width: 70%;
+          margin: 0 auto;
+        }
+      }
+
+      &__search {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        order: 3;
+      }
+
+      &__favorite {
+        order: 2;
+        width: 45%;
+        display: flex;
+        justify-content: center;
       }
     }
   }

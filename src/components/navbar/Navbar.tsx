@@ -50,7 +50,9 @@ const Navbar: FC = () => {
         </div>
 
         <div className="navbar__favorite">
-          <BsSuitHeartFill /> Favorite
+          <span>
+            <BsSuitHeartFill size="2rem" color="red" /> Favorites
+          </span>
         </div>
       </nav>
     </header>

@@ -6,10 +6,16 @@ import { Category, MovieType, TvType } from "../../models/Enums";
 import { Movie } from "../../models/Movie";
 import { Button, Container } from "react-bootstrap";
 import apiConfig from "../../api/apiConfig";
-import { BsDot, BsPlayFill } from "react-icons/bs";
+import {
+  BsDot,
+  BsPlayFill,
+  BsSuitHeartFill,
+  BsSuitHeart,
+} from "react-icons/bs";
 import ActorsList from "../../components/details/ActorsList";
 import PostersList from "../../components/details/PostersList";
 import MovieListContainer from "../../components/discovery/MovieListContainer";
+import VideoModal from "../../components/modal/VideoModal";
 
 type Genre = {
   id: number;
@@ -36,6 +42,15 @@ const Details: FC = () => {
   const { category, id } = useParams();
   const similar = category === "tv" ? TvType.Similar : MovieType.Similar;
   const [item, setItem] = useState<Item>();
+  const [showVideo, setShowVideo] = useState<boolean>(false);
+
+  const showVideoModal = () => {
+    setShowVideo(true);
+  };
+
+  const closeVideoModal = () => {
+    setShowVideo(false);
+  };
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
@@ -111,14 +126,19 @@ const Details: FC = () => {
 
             <div className="details__container__about__actions">
               <Button
-                className="btn-primary px-5 py-2 fw-bold"
+                className="btn-primary px-4 py-2 fw-bold"
                 variant="warning"
+                onClick={showVideoModal}
               >
                 <BsPlayFill size="1.25rem" /> PLAY NOW
               </Button>
-              <Button className="px-4" variant="dark">
+              <Button className="px-3" variant="dark" onClick={showVideoModal}>
                 TRAILER
               </Button>
+              <span>
+                <BsSuitHeart color="red" size="2.5rem" />
+                Add to Favorites
+              </span>
             </div>
           </div>
 
@@ -137,6 +157,14 @@ const Details: FC = () => {
           id={id}
         />
       </Container>
+
+      {showVideo && (
+        <VideoModal
+          id={id!}
+          category={category as Category}
+          onClose={closeVideoModal}
+        />
+      )}
     </>
   );
 };

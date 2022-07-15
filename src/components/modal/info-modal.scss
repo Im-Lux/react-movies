@@ -1,0 +1,13 @@
+@use "../../sass/index" as *;
+
+.info__container {
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  bottom: 10px;
+  width: 95%;
+  height: 20rem;
+  margin-left: -47.5%;
+
+  background: red;
+}

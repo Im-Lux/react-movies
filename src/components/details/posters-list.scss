@@ -15,8 +15,16 @@
 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 120%;
 
+    opacity: 0.9;
     border-radius: 0.75rem;
+
+    transition: background-size 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    &:hover {
+      background-size: 135%;
+      opacity: 1;
+    }
   }
 }

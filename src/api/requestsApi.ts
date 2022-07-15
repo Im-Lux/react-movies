@@ -59,6 +59,12 @@ const requestsApi = {
 
     return axiosClient.get(url, params);
   },
+
+  getVideos: (category: Category, id: string, params: object) => {
+    const url = category + "/" + id + "/videos";
+
+    return axiosClient.get(url, params);
+  },
 };
 
 export default requestsApi;

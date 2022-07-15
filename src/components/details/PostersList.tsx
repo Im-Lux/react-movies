@@ -34,14 +34,20 @@ const PostersList: FC = () => {
       <Swiper grabCursor={true} spaceBetween={15} slidesPerView={"auto"}>
         {images?.map((image, index) => (
           <SwiperSlide key={index}>
-            <div
-              className="posters__item"
-              style={{
-                backgroundImage: `url(${apiConfig.coverImage(
-                  image.file_path
-                )})`,
-              }}
-            ></div>
+            <a
+              href={`${apiConfig.coverImage(image.file_path)}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <div
+                className="posters__item"
+                style={{
+                  backgroundImage: `url(${apiConfig.coverImage(
+                    image.file_path
+                  )})`,
+                }}
+              ></div>
+            </a>
           </SwiperSlide>
         ))}
       </Swiper>

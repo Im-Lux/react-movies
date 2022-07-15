@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import "./movie-list-item.scss";
 import { useNavigate } from "react-router-dom";
 import apiConfig from "../../api/apiConfig";
@@ -6,6 +6,7 @@ import { Movie } from "../../models/Movie";
 import { Button } from "react-bootstrap";
 import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 import { Category } from "../../models/Enums";
+import InfoModal from "../modal/InfoModal";
 
 type MovieListItemProps = {
   movie: Movie;

@@ -2,7 +2,6 @@
 
 .hero {
   position: relative;
-  height: 95vh;
   padding: 5rem;
   overflow: hidden;
 
@@ -66,7 +65,7 @@
       flex-direction: column-reverse;
 
       &__info {
-        min-width: 90%;
+        max-width: 100%;
         align-items: center;
         text-align: center;
         position: relative;
@@ -95,6 +94,10 @@
       }
     }
   }
+
+  @include tablet {
+    padding: 0;
+  }
 }
 
 .recommendations {
@@ -111,5 +114,9 @@
     h1 {
       text-align: center;
     }
+  }
+
+  @include tablet {
+    padding-inline: 2rem;
   }
 }

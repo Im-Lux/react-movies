@@ -2,6 +2,22 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  background: $color-background;
+  box-shadow: inset 0 0 3px grey;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient($color-yellow, $color-background);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: red;
+}
+
 *,
 *::before,
 *::after {

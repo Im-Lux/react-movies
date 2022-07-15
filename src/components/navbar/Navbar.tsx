@@ -4,9 +4,12 @@ import { Container, Form } from "react-bootstrap";
 import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/justwatch-logo.webp";
+import FavoritesModal from "../modal/FavoritesModal";
+import { useFavorites } from "../../context/favorites-context";
 
 const Navbar: FC = () => {
   const headerRef = useRef<HTMLElement>(null);
+  const { isModalShown, showFavorites } = useFavorites();
 
   useEffect(() => {
     const resizeNavbar = () => {
@@ -49,12 +52,14 @@ const Navbar: FC = () => {
           <input type="text" placeholder="search movies..." />
         </div>
 
-        <div className="navbar__favorite">
+        <div className="navbar__favorite" onClick={() => showFavorites()}>
           <span>
             <BsSuitHeartFill size="2rem" color="red" /> Favorites
           </span>
         </div>
       </nav>
+
+      {isModalShown && <FavoritesModal />}
     </header>
   );
 };

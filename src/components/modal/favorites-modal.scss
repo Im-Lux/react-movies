@@ -1,0 +1,80 @@
+@use "../../sass/index" as *;
+
+.favorites {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30%;
+  height: 20rem;
+  overflow: hidden;
+  background: $color-background;
+  border-bottom-left-radius: 1rem;
+  padding: 1rem;
+  box-shadow: $box-shadow;
+
+  @include tablet {
+    width: 90%;
+  }
+
+  h2 {
+    font-size: 1.55rem;
+    margin-bottom: 1.5rem;
+
+    svg {
+      margin-top: -5px;
+      margin-left: 5px;
+    }
+  }
+
+  .swiper {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 6rem;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  &__nocontent {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-block: 0.25rem;
+    padding: 0.35rem;
+    border-radius: 0.5rem;
+    background-color: #0d131b;
+
+    &__image {
+      min-width: 10rem;
+      max-width: 10rem;
+
+      img {
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+    }
+
+    &__title {
+      flex: 1;
+      text-align: center;
+
+      h3 {
+        font-size: 1.25rem;
+      }
+    }
+  }
+}

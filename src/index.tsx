@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.scss";
 import { BrowserRouter } from "react-router-dom";
 import { ModalInfoContextProvider } from "./context/modal-info-context";
+import { FavoritesContextProvider } from "./context/favorites-context";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -12,9 +13,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <ModalInfoContextProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <FavoritesContextProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </FavoritesContextProvider>
     </ModalInfoContextProvider>
   </React.StrictMode>
 );

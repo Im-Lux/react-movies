@@ -1,0 +1,42 @@
+@use "../../sass/index" as *;
+
+.favorites-button {
+  position: relative;
+  cursor: pointer;
+
+  svg {
+    position: relative;
+    z-index: 10;
+
+    margin-right: 0.35rem;
+  }
+
+  .heart-animation {
+    position: absolute;
+    top: -0.5rem;
+    left: -0.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 100%;
+    background: #fff;
+  }
+
+  // .heart-animation.active {
+  //   animation: ping-heart 1s infinite linear;
+  // }
+}
+
+@keyframes ping-heart {
+  0% {
+    background: #fff;
+    border: 0px solid #fff;
+  }
+  50% {
+    background: #fff;
+    border: 100px solid #222;
+  }
+  100% {
+    background: #fff;
+    border: 0px solid #222;
+  }
+}

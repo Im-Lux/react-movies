@@ -10,7 +10,14 @@
   background: $color-background;
   border-bottom-left-radius: 1rem;
   padding: 1rem;
-  box-shadow: $box-shadow;
+  background: rgb(37, 37, 37);
+  background: linear-gradient(
+    90deg,
+    rgba(42, 42, 42, 1) 0%,
+    rgba(24, 24, 24, 1) 30%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 
   @include tablet {
     width: 90%;
@@ -56,7 +63,7 @@
     margin-block: 0.25rem;
     padding: 0.35rem;
     border-radius: 0.5rem;
-    background-color: #0d131b;
+    background-color: #03070c;
 
     &__image {
       min-width: 10rem;

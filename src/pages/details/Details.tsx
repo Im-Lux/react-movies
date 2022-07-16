@@ -22,7 +22,7 @@ import {
 } from "../../context/modal-info-context";
 import InfoModal from "../../components/modal/InfoModal";
 import { useFavorites } from "../../context/favorites-context";
-import FavoritesButton from "../../utils/FavoritesButton";
+import FavoritesButton from "../../components/utils/FavoritesButton";
 
 type Genre = {
   id: number;

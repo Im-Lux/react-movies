@@ -6,7 +6,7 @@ import "./info-modal.scss";
 import { useModalInfo } from "../../context/modal-info-context";
 import apiConfig from "../../api/apiConfig";
 import { useNavigate } from "react-router-dom";
-import FavoritesButton from "../../utils/FavoritesButton";
+import FavoritesButton from "../utils/FavoritesButton";
 
 const InfoModal: FC = () => {
   const modalRef = useRef<HTMLDivElement>(null);

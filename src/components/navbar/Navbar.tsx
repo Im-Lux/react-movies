@@ -5,6 +5,7 @@ import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/justwatch-logo.webp";
 import FavoritesModal from "../modal/FavoritesModal";
+import NavbarSearch from "../utils/NavbarSearch";
 import { useFavorites } from "../../context/favorites-context";
 
 const Navbar: FC = () => {
@@ -49,7 +50,8 @@ const Navbar: FC = () => {
         </ul>
 
         <div className="navbar__search">
-          <input type="text" placeholder="search movies..." />
+          {/* <input type="text" placeholder="search movies..." /> */}
+          <NavbarSearch />
         </div>
 
         <div className="navbar__favorite" onClick={() => showFavorites()}>

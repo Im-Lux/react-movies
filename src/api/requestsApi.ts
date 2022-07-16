@@ -65,6 +65,12 @@ const requestsApi = {
 
     return axiosClient.get(url, params);
   },
+
+  getSearch: (category: Category, params: object) => {
+    const url = "search/" + category;
+
+    return axiosClient.get(url, params);
+  },
 };
 
 export default requestsApi;

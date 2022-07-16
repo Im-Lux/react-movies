@@ -1,7 +1,8 @@
 import { FC } from "react";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
-import { useFavorites } from "../context/favorites-context";
-import { Category } from "../models/Enums";
+import { useFavorites } from "../../context/favorites-context";
+import { Category } from "../../models/Enums";
+import Confetti from "react-confetti";
 import "./favorites-button.scss";
 
 type Item = {
@@ -33,6 +34,11 @@ const FavoritesButton: FC<Props> = ({ item }) => {
         <span className="favorites-button" onClick={itemToFavoritesHandler}>
           <BsSuitHeart color="red" size="2.5rem" />
           Add to Favs
+          {/* <Confetti
+            style={{ zIndex: 200, position: "fixed" }}
+            width={100}
+            height={100}
+          /> */}
         </span>
       ) : (
         <span className="favorites-button" onClick={itemToFavoritesHandler}>

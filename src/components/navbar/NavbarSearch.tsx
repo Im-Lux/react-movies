@@ -5,7 +5,7 @@ import apiConfig from "../../api/apiConfig";
 import requestsApi from "../../api/requestsApi";
 import { Category } from "../../models/Enums";
 import { Movie } from "../../models/Movie";
-import CloseButton from "./CloseButton";
+import CloseButton from "../utils/CloseButton";
 import "./navbar-search.scss";
 
 const Search: FC = () => {

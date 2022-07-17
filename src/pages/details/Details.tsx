@@ -3,25 +3,15 @@ import "./details.scss";
 import { useParams } from "react-router-dom";
 import requestsApi from "../../api/requestsApi";
 import { Category, MovieType, TvType } from "../../models/Enums";
-import { Movie } from "../../models/Movie";
 import { Button, Container } from "react-bootstrap";
 import apiConfig from "../../api/apiConfig";
-import {
-  BsDot,
-  BsPlayFill,
-  BsSuitHeartFill,
-  BsSuitHeart,
-} from "react-icons/bs";
+import { BsDot, BsPlayFill } from "react-icons/bs";
 import ActorsList from "../../components/details/ActorsList";
 import PostersList from "../../components/details/PostersList";
 import MovieListContainer from "../../components/discovery/MovieListContainer";
 import VideoModal from "../../components/modal/VideoModal";
-import {
-  ModalInfoContextProvider,
-  useModalInfo,
-} from "../../context/modal-info-context";
+import { useModalInfo } from "../../context/modal-info-context";
 import InfoModal from "../../components/modal/InfoModal";
-import { useFavorites } from "../../context/favorites-context";
 import FavoritesButton from "../../components/utils/FavoritesButton";
 import NotFound from "../not-found/NotFound";
 
@@ -127,9 +117,11 @@ const Details: FC = () => {
                     <BsDot size="1.25rem" />
                   </p>
                   <p>
-                    {category === "movie"
-                      ? item?.release_date.slice(0, 4)
-                      : item?.first_air_date.slice(0, 4)}
+                    {item.release_date
+                      ? item.release_date.slice(0, 4)
+                      : item.first_air_date
+                      ? item.first_air_date.slice(0, 4)
+                      : "Unknown"}
                   </p>
                 </div>
               </div>

@@ -1,12 +1,4 @@
-import {
-  FC,
-  createContext,
-  useContext,
-  ReactNode,
-  useState,
-  useEffect,
-  useLayoutEffect,
-} from "react";
+import { FC, createContext, useContext, ReactNode, useState } from "react";
 import { useLocalStorage } from "../hooks/use-local-storage";
 import { Category } from "../models/Enums";
 

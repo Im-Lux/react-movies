@@ -4,11 +4,13 @@
   width: 90%;
   margin: 0 auto;
 
+  padding-top: 3rem;
+
   &__header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     &__filter {
       padding: 1.5rem 2.5rem;
@@ -19,6 +21,18 @@
       justify-content: flex-start;
       align-items: center;
       gap: 3rem;
+
+      @include tablet {
+        margin-top: 1rem;
+        width: 100%;
+
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      @include mobile {
+        flex-direction: column;
+      }
 
       &__year {
         display: flex;

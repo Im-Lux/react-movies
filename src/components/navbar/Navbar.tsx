@@ -1,11 +1,10 @@
-import React, { FC, LegacyRef, useEffect, useRef } from "react";
+import { FC, useEffect, useRef } from "react";
 import "./navbar.scss";
-import { Container, Form } from "react-bootstrap";
-import { BsSuitHeartFill, BsSuitHeart } from "react-icons/bs";
+import { BsSuitHeartFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/justwatch-logo.webp";
 import FavoritesModal from "../modal/FavoritesModal";
-import NavbarSearch from "../utils/NavbarSearch";
+import NavbarSearch from "./NavbarSearch";
 import { useFavorites } from "../../context/favorites-context";
 
 const Navbar: FC = () => {

@@ -1,12 +1,8 @@
 import { FC, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/pagination";
-import { Pagination } from "swiper";
-import ScrollContainer from "react-indiana-drag-scroll";
 import "./favorites-modal.scss";
 import { Button } from "react-bootstrap";
-import { AiOutlineClose } from "react-icons/ai";
-import { BsHeartFill, BsSuitHeartFill } from "react-icons/bs";
+import { BsSuitHeartFill } from "react-icons/bs";
 import { useFavorites } from "../../context/favorites-context";
 import apiConfig from "../../api/apiConfig";
 import { useNavigate } from "react-router-dom";

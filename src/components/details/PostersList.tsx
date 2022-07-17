@@ -4,7 +4,6 @@ import requestsApi from "../../api/requestsApi";
 import { useParams } from "react-router-dom";
 import { Category } from "../../models/Enums";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ScrollContainer from "react-indiana-drag-scroll";
 import apiConfig from "../../api/apiConfig";
 
 type Image = {

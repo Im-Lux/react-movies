@@ -1,7 +1,5 @@
 import { FC, useEffect, useRef } from "react";
 import { Button } from "react-bootstrap";
-import { BsSuitHeart } from "react-icons/bs";
-import { AiOutlineClose } from "react-icons/ai";
 import "./info-modal.scss";
 import { useModalInfo } from "../../context/modal-info-context";
 import apiConfig from "../../api/apiConfig";

@@ -2,7 +2,6 @@ import { FC } from "react";
 import { BsSuitHeart, BsSuitHeartFill } from "react-icons/bs";
 import { useFavorites } from "../../context/favorites-context";
 import { Category } from "../../models/Enums";
-import Confetti from "react-confetti";
 import "./favorites-button.scss";
 
 type Item = {

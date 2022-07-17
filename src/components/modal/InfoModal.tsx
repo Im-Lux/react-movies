@@ -7,6 +7,7 @@ import { useModalInfo } from "../../context/modal-info-context";
 import apiConfig from "../../api/apiConfig";
 import { useNavigate } from "react-router-dom";
 import FavoritesButton from "../utils/FavoritesButton";
+import CloseButton from "../utils/CloseButton";
 
 const InfoModal: FC = () => {
   const modalRef = useRef<HTMLDivElement>(null);
@@ -16,7 +17,6 @@ const InfoModal: FC = () => {
   useEffect(() => {
     const addAnimation = setTimeout(() => {
       modalRef.current?.classList.add("active");
-      console.log("hej");
     }, 10);
 
     return () => {
@@ -72,9 +72,7 @@ const InfoModal: FC = () => {
         }}
       ></div>
 
-      <div className="info__container__close" onClick={() => closeModal()}>
-        <AiOutlineClose size="1.5rem" color="yellow" />
-      </div>
+      <CloseButton onClick={closeModal} />
     </div>
   );
 };

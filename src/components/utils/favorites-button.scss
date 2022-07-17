@@ -7,36 +7,38 @@
   svg {
     position: relative;
     z-index: 10;
-
     margin-right: 0.35rem;
-  }
 
-  .heart-animation {
-    position: absolute;
-    top: -0.5rem;
-    left: -0.5rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    border-radius: 100%;
-    background: #fff;
-  }
+    &.heart-bigger {
+      animation: heart-big 1s forwards linear;
+    }
 
-  // .heart-animation.active {
-  //   animation: ping-heart 1s infinite linear;
-  // }
+    &.heart-lower {
+      animation: heart-low 1s forwards linear;
+    }
+  }
 }
 
-@keyframes ping-heart {
+@keyframes heart-big {
   0% {
-    background: #fff;
-    border: 0px solid #fff;
+    transform: scale(1);
   }
   50% {
-    background: #fff;
-    border: 100px solid #222;
+    transform: scale(1.5);
   }
   100% {
-    background: #fff;
-    border: 0px solid #222;
+    transform: scale(1);
+  }
+}
+
+@keyframes heart-low {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
   }
 }

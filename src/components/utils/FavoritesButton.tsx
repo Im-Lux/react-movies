@@ -32,17 +32,12 @@ const FavoritesButton: FC<Props> = ({ item }) => {
     <>
       {!isItemInFavorites(item?.id.toString()!) ? (
         <span className="favorites-button" onClick={itemToFavoritesHandler}>
-          <BsSuitHeart color="red" size="2.5rem" />
+          <BsSuitHeart className="heart-lower" color="red" size="2.5rem" />
           Add to Favs
-          {/* <Confetti
-            style={{ zIndex: 200, position: "fixed" }}
-            width={100}
-            height={100}
-          /> */}
         </span>
       ) : (
         <span className="favorites-button" onClick={itemToFavoritesHandler}>
-          <BsSuitHeartFill color="red" size="2.5rem" />
+          <BsSuitHeartFill className="heart-bigger" color="red" size="2.5rem" />
           Remove from Favs
         </span>
       )}

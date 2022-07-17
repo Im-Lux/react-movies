@@ -1,0 +1,28 @@
+@use "../../sass/index" as *;
+
+.not-found {
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+
+    a {
+      color: rgb(34, 110, 209);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  }
+}

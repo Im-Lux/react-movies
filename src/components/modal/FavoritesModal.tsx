@@ -10,13 +10,25 @@ import { BsHeartFill, BsSuitHeartFill } from "react-icons/bs";
 import { useFavorites } from "../../context/favorites-context";
 import apiConfig from "../../api/apiConfig";
 import { useNavigate } from "react-router-dom";
+import CloseButton from "../utils/CloseButton";
 
 const FavoritesModal: FC = () => {
+  const favoritesRef = useRef<HTMLDivElement>(null);
   const { favorites, closeFavorites, removeItemFromFavorites } = useFavorites();
   const navigation = useNavigate();
 
+  useEffect(() => {
+    const addAnimation = setTimeout(() => {
+      favoritesRef.current?.classList.add("active");
+    }, 10);
+
+    return () => {
+      clearTimeout(addAnimation);
+    };
+  }, []);
+
   return (
-    <div className="favorites">
+    <div ref={favoritesRef} className="favorites">
       <h2>
         Your Favs <BsSuitHeartFill color="red" />
       </h2>
@@ -67,9 +79,7 @@ const FavoritesModal: FC = () => {
         ))}
       </Swiper>
 
-      <div className="info__container__close" onClick={() => closeFavorites()}>
-        <AiOutlineClose size="1.5rem" color="yellow" />
-      </div>
+      <CloseButton onClick={closeFavorites} />
     </div>
   );
 };

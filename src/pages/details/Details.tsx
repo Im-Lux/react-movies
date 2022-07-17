@@ -23,6 +23,7 @@ import {
 import InfoModal from "../../components/modal/InfoModal";
 import { useFavorites } from "../../context/favorites-context";
 import FavoritesButton from "../../components/utils/FavoritesButton";
+import NotFound from "../not-found/NotFound";
 
 type Genre = {
   id: number;
@@ -87,6 +88,10 @@ const Details: FC = () => {
     item?.genres.forEach((item) => names.push(item.name));
 
     return names.slice(0, 3).join(", ");
+  }
+
+  if (!item) {
+    return <NotFound />;
   }
 
   return (

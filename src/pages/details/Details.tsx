@@ -171,7 +171,7 @@ const Details: FC = () => {
 
       <Container className="mt-5">
         <MovieListContainer
-          title={`Similar ${category}s`}
+          title="You might be interested"
           category={category as Category}
           type={similar}
           id={id}

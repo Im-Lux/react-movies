@@ -71,6 +71,12 @@ const requestsApi = {
 
     return axiosClient.get(url, params);
   },
+
+  getDiscover: (category: Category, params: object) => {
+    const url = "discover/" + category;
+
+    return axiosClient.get(url, params);
+  },
 };
 
 export default requestsApi;

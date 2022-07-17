@@ -1,6 +1,7 @@
 import { FC, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import HeroSlide from "../../components/discovery/HeroSlide";
+import MovieGrid from "../../components/discovery/MovieGrid";
 import MovieListContainer from "../../components/discovery/MovieListContainer";
 import InfoModal from "../../components/modal/InfoModal";
 import {
@@ -41,6 +42,8 @@ const Discovery: FC = () => {
           type={TvType.TopRated}
         />
       </Container>
+
+      <MovieGrid />
 
       {isShown && <InfoModal />}
     </>

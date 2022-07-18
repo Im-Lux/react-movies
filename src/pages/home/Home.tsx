@@ -35,6 +35,7 @@ const Home: FC = () => {
                   key={index}
                   name={service.name}
                   imagePath={service.imagePath}
+                  url={service.url}
                 />
               ))}
             </div>

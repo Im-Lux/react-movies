@@ -146,7 +146,7 @@ const Details: FC = () => {
                   item={{
                     id: item?.id.toString()!,
                     backdrop_path: item?.backdrop_path!,
-                    title: item?.title!,
+                    title: item?.title || item?.name,
                     category: category! as Category,
                   }}
                 />

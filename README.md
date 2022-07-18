@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# PLAY MOVIES APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*Responsive frontend application for browsing and playing Movies and TV Shows.*
 
-## Available Scripts
+<hr />
 
-In the project directory, you can run:
+## Please make sure to follow instructions below to start this project locally:
 
-### `npm start`
+Make sure to run `npm install` after downloading the project.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Make sure to create .env file at the root of the project named `REACT_APP_API_KEY` and assign it to your Api Key.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+For more information how to get your Api Key follow [TMDB API Documentation](https://www.themoviedb.org/documentation/api).
 
-### `npm test`
+Now feel free to run `npm run start` command from the terminal and start using the App!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<hr />
 
-### `npm run build`
+### Be sure to check the website for the best experience!
+> [See website](https://react-movies-steel.vercel.app/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Stack used: React, TypeScript, SCSS, React Bootstrap, TMDB Api
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br />
+Projects Screenshots:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## *HOME PAGE*
 
-### `npm run eject`
+![movies01](https://user-images.githubusercontent.com/46372998/179545121-e252b8b0-2753-4a5d-b904-40e088246928.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## *DISCOVERY PAGE*
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![movies02](https://user-images.githubusercontent.com/46372998/179545197-a6a05fdc-8865-42da-aaae-7e82278bab88.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![movies03](https://user-images.githubusercontent.com/46372998/179545251-d1dadd15-3212-4391-884d-bba287f2f59a.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## *DETAILS PAGE*
 
-## Learn More
+![movies04](https://user-images.githubusercontent.com/46372998/179545299-ec2bc490-b516-4291-b8f6-d94aab829ce4.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![movies05](https://user-images.githubusercontent.com/46372998/179545334-806cd423-4123-49fd-b26d-7b2599cf82c7.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## *NAVBAR SEARCH*
+
+![movies06](https://user-images.githubusercontent.com/46372998/179545426-fb4ce8dc-e8d1-4738-8d06-0d7599b64202.png)
+
+
+
